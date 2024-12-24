@@ -1,7 +1,7 @@
 const conn = require("../connection.js");
 
 exports.updateDonarRegistration = (req, res) => {
-    const { uniqueId, password, name, email, age, selectedBlood, selectedGender, selectedState, selectedDistrict, selectedTaluq, selectedCity, address } = req.body;
+    const { uniqueId, password, name, email, age, selectedBlood, selectedGender, selectedState, selectedDistrict, selectedTaluq, selectedCity, address, mobileNumber } = req.body;
     // Check if the donor exists and retrieve the password
     conn.query("SELECT donarPassword FROM donarregistration WHERE donarId = ?", [uniqueId], (err, results) => {
         if (err) {
@@ -20,14 +20,39 @@ exports.updateDonarRegistration = (req, res) => {
 
         // Proceed with updating the donor data if passwords match
         const updateQuery = `
-            UPDATE donarregistration 
-            SET donarName = ?, donarEmail = ?, donarAge = ?, donarBloodGroup = ?, 
-                donarGender = ?, donarState = ?, donarDistrict = ?, donarTaluq = ?, 
-                donarCity = ?, donarAddress = ?, donarPassword = ?
-            WHERE donarId = ?`;
+    UPDATE donarregistration 
+    SET 
+        donarName = ?, 
+        donarNumber = ?, 
+        donarEmail = ?, 
+        donarAge = ?, 
+        donarBloodGroup = ?, 
+        donarGender = ?, 
+        donarState = ?, 
+        donarDistrict = ?, 
+        donarTaluq = ?, 
+        donarCity = ?, 
+        donarAddress = ?, 
+        donarPassword = ?
+    WHERE donarId = ?`;
 
-        const values = [name, email, age, selectedBlood, selectedGender, selectedState, selectedDistrict, selectedTaluq, selectedCity, address, password, uniqueId];
-
+        const values = [
+            name,             // donarName
+            mobileNumber,     // donarNumber (String)
+            email,            // donarEmail (String)
+            age,              // donarAge (Integer)
+            selectedBlood,    // donarBloodGroup (String)
+            selectedGender,   // donarGender (Enum)
+            selectedState,    // donarState (String)
+            selectedDistrict, // donarDistrict (String)
+            selectedTaluq,  // donarTaluq (nullable String, null if empty)
+            selectedCity,     // donarCity (String)
+            address || null,  // donarAddress (nullable String, null if empty)
+            password,         // donarPassword (hashed password)
+            // donarAvailability (Default to 1 if not provided)
+            uniqueId          // donarId (String, used in WHERE clause)
+        ];
+        console.table(req.body)
         conn.query(updateQuery, values, (error) => {
             if (error) {
                 console.error('Error updating donor data:', error);

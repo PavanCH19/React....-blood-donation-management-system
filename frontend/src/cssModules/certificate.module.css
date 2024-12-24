@@ -2,6 +2,7 @@
     width: 1082px;
     height: 753px;
     padding: 20px;
+
 }
 
 .container {
@@ -97,4 +98,11 @@
 .date {
     top: 75%;
     left: 22%;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }

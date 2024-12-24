@@ -64,6 +64,9 @@ const Certificate = () => {
 
     return (
         <>
+            <div className={styles.button}><button onClick={handleDownload} className={styles.downloadButton}>
+                Download Certificate
+            </button></div>
             <div ref={certificateRef} className={styles.mainContainer}>
                 {/* <div className={styles.header}>
                     <h1 className={styles.title}>Certificate of Appreciation</h1>
@@ -133,9 +136,7 @@ const Certificate = () => {
                     <div><u>Certified By</u></div>
                 </div>
             </div>
-            <button onClick={handleDownload} className={styles.downloadButton}>
-                Download Certificate
-            </button>
+
         </>
     );
 };

@@ -53,8 +53,7 @@ const Nav = ({ user, handleLogout }) => {
                     cursor: pointer;
                     pointer-events: auto;
                     margin-left: 25px;
-                    touch-action: manipulation;
-                    
+                    touch-action: manipulation;                    
                 }
 
                 .icon-bar {
@@ -85,67 +84,66 @@ const Nav = ({ user, handleLogout }) => {
                 #nav-container:focus-within .icon-bar:nth-of-type(3) {
                     transform: translate3d(0, -8px, 0) rotate(-45deg);
                 }
-#nav-content {
-    margin-top: 130px;
-    margin-left: 10px;
-    padding: 20px;
-    width: 250px;
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: calc(100% - 40px);
-    background: #f9f9f9;
-    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
-    pointer-events: auto;
-    transform: translateX(-100%);
-    transition: transform .3s ease-out;
-    z-index: 3;
-    border-radius: 8px;
-    width : 300px;
-}
-
-#nav-content ul {
-    display: flex;
-    flex-direction: column;
-    padding: 0;
-    margin: 0;
-}
-
-#nav-content li {
-    list-style: none;
-}
-
-#nav-content li a {
-    padding: 12px 20px;
-    display: block;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: #333;
-    transition: color .3s ease, padding-left .3s ease;
-    border-radius: 6px;
-}
-
-#nav-content li a.blood-donation {
-    color: #E60000; /* Blood Red */
-}
-
-#nav-content li a.blood-donation:hover {
-    color: #fff;
-    background-color: #E60000; /* Blood Red on hover */
-    padding-left: 25px;
-}
-
-#nav-content li a:hover {
-    color: #BF7497;
-    padding-left: 25px;
-    background-color: rgba(191, 116, 151, 0.1);
-}
-
-#nav-container:focus-within #nav-content {
-    transform: none;
-}
-
-
+                #nav-content {
+                    margin-top: 130px;
+                    margin-left: 10px;
+                    padding: 20px;
+                    width: 250px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    height: calc(100% - 40px);
+                    background: #f9f9f9;
+                    box-shadow: 2px 4px 10px rgba(0, 0, 0, 0.1);
+                    pointer-events: auto;
+                    transform: translateX(-100%);
+                    transition: transform .3s ease-out;
+                    z-index: 3;
+                    border-radius: 8px;
+                    width : 300px;
+                }
+                                
+                #nav-content ul {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 0;
+                    margin: 0;
+                }
+                                
+                #nav-content li {
+                    list-style: none;
+                }
+                                
+                #nav-content li a {
+                    padding: 12px 20px;
+                    display: block;
+                    text-transform: uppercase;
+                    font-weight: 600;
+                    color: #333;
+                    transition: color .3s ease, padding-left .3s ease;
+                    border-radius: 6px;
+                }
+                                
+                #nav-content li a.blood-donation {
+                    color: #E60000; /* Blood Red */
+                }
+                                
+                #nav-content li a.blood-donation:hover {
+                    color: #fff;
+                    background-color: #E60000; /* Blood Red on hover */
+                    padding-left: 25px;
+                }
+                                
+                #nav-content li a:hover {
+                    color: #BF7497;
+                    padding-left: 25px;
+                    background-color: rgba(191, 116, 151, 0.1);
+                }
+                                
+                #nav-container:focus-within #nav-content {
+                    transform: none;
+                }
+                            
                 .main-title-container {
                     display: flex;
                     flex-direction: row;
@@ -203,7 +201,6 @@ const Nav = ({ user, handleLogout }) => {
                     font-size : 1.1rem;
                     color : rgba(240, 240, 240, 1);
             }
-
                 `}
             </style>
 
