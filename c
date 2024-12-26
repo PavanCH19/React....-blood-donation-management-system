@@ -98,3 +98,33 @@ userDashboards
 Apdate query in sending sms only on active members 
 
 >>>>>>> 78e93ecd47d9a274818cbaada3f16e4bb0a2db66
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+https://diagrammingai.com/client/project/e071af5b-7f98-4eec-8053-026152966489
+
+
+actors : donar, bloodbank/healthcare provider, admin
+donar : registratraion, login, view(profile, bloodrequest, donation history by him, donation certificate), edit profile, password reset
+bloodbank : registratraion, login, view(profile, donation certificate), send bloodrequest, edit profile, password reset
+admin : manages all 
+
+
+
+actors : donar, bloodbank/healthcare provider, admin
+donar : registratraion, login, view(profile, bloodrequest, donation history by him, donation certificate), edit profile, password reset
+bloodbank : registratraion, login, view(profile, donation certificate), send bloodrequest, edit profile, password reset
+admin : manages all  separate the actors    
+give the activity daigram for the above
